@@ -1,0 +1,50 @@
+{
+  "name": "widget.js.fun",
+  "version": "1.0.0",
+  "author": "Neo Fu",
+  "homepage": "",
+  "title": {
+    "zh-CN": "有趣的桌面组件"
+  },
+  "description": {
+    "zh-CN": "有趣的桌面组件"
+  },
+  "entry": "/",
+  "hash": true,
+  "url": "",
+  "widgets": [
+    {
+      "name": "widget.js.fun.wooden_fish",
+      "title": {
+        "zh-CN": "电子木鱼"
+      },
+      "description": {
+        "zh-CN": ""
+      },
+      "keywords": [
+        "recommend"
+      ],
+      "security": false,
+      "permissions": [],
+      "lang": "zh-CN",
+      "width": 4,
+      "height": 4,
+      "maxWidth": 4,
+      "webviewTag": false,
+      "maxHeight": 4,
+      "minWidth": 4,
+      "minHeight": 4,
+      "movable": true,
+      "singleton": false,
+      "resizable": true,
+      "path": "/widget/wooden_fish",
+      "meta": {},
+      "backgroundThrottling": true,
+      "previewImage": "修改为组件预览图地址",
+      "supportDeployMode": 17,
+      "configPagePath": "/widget/config/wooden_fish",
+      "routes": []
+    }
+  ],
+  "pages": []
+}
