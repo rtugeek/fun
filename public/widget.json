@@ -19,7 +19,7 @@
         "zh-CN": "电子木鱼"
       },
       "description": {
-        "zh-CN": ""
+        "zh-CN": "修电子福报"
       },
       "keywords": [
         "recommend"
@@ -27,13 +27,13 @@
       "security": false,
       "permissions": [],
       "lang": "zh-CN",
-      "width": 4,
-      "height": 4,
-      "maxWidth": 4,
+      "width": 2,
+      "height": 2,
+      "maxWidth": 2,
       "webviewTag": false,
-      "maxHeight": 4,
-      "minWidth": 4,
-      "minHeight": 4,
+      "maxHeight": 2,
+      "minWidth": 2,
+      "minHeight": 2,
       "movable": true,
       "singleton": false,
       "resizable": true,
@@ -41,6 +41,9 @@
       "meta": {},
       "backgroundThrottling": true,
       "previewImage": "修改为组件预览图地址",
+      "categories": [
+        "fun"
+      ],
       "supportDeployMode": 17,
       "configPagePath": "/widget/config/wooden_fish",
       "routes": []
