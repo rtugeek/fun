@@ -1,0 +1,11 @@
+{
+  "fileMap": [
+    {
+      "src": "./dist/",
+      "dest": "/www/wwwroot/widgetjs.cn/fun"
+    }
+  ],
+  "ftpConfig": {
+    "host": ["mine"]
+  }
+}

@@ -1,14 +1,14 @@
-import type { RouteRecordRaw } from 'vue-router';
-import WoodenFishWidget from './WoodenFish.widget';
+import type { RouteRecordRaw } from 'vue-router'
+import WoodenFishWidget from './WoodenFish.widget'
 
-const path = WoodenFishWidget.path;
-const name = WoodenFishWidget.name;
+const path = WoodenFishWidget.path
+const name = WoodenFishWidget.name
 
-const configPagePath = WoodenFishWidget.configPagePath!;
+const configPagePath = WoodenFishWidget.configPagePath!.split('?')[0]
 
 const WoodenFishWidgetRoutes: RouteRecordRaw[] = [
   {
-    path: path,
+    path,
     name: `${name}`,
     component: () =>
       import(
@@ -23,6 +23,6 @@ const WoodenFishWidgetRoutes: RouteRecordRaw[] = [
         /* webpackChunkName: "widget.js.fun.wooden_fish.config" */ './WoodenFishConfigView.vue'
       ),
   },
-];
+]
 
-export default WoodenFishWidgetRoutes;
+export default WoodenFishWidgetRoutes

@@ -1,28 +1,29 @@
-<template>
-  <widget-edit-dialog
-    :widget-params="widgetParams"
-    :option="widgetConfigOption"
-    v-model="widgetData"
-    @apply="save()"
-    @confirm="save({ closeWindow: true })"
-  >
-  </widget-edit-dialog>
-</template>
-
 <script lang="ts" setup>
-import { useWidget, WidgetConfigOption } from '@widget-js/vue3';
-import { WidgetData } from '@widget-js/core';
+import { WidgetConfigOption, useWidget } from '@widget-js/vue3'
 
-const { widgetData, widgetParams, save } = useWidget(WidgetData);
+const { widgetParams } = useWidget()
 
-//修改成需要设置组件参数配置
+function save() {
+  window.close()
+}
+
+// 修改成需要设置组件参数配置
 const widgetConfigOption = new WidgetConfigOption({
+  custom: false,
   theme: {
     backgroundColor: true,
     borderRadius: true,
     color: true,
   },
-});
+})
 </script>
+
+<template>
+  <widget-edit-dialog
+    :widget-params="widgetParams"
+    :option="widgetConfigOption"
+    @confirm="save"
+  />
+</template>
 
 <style scoped></style>

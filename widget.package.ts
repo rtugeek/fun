@@ -1,6 +1,5 @@
 import { WidgetPackage } from '@widget-js/core'
 
-// TODO 完善组件包信息
 export default new WidgetPackage({
   author: 'Neo Fu',
   description: {
@@ -8,12 +7,16 @@ export default new WidgetPackage({
   },
   entry: '/',
   hash: true,
-  homepage: '',
+  homepage: 'widgetjs.cn',
+  remote: {
+    hostname: 'widgetjs.cn',
+    entry: 'https://widgetjs.cn/fun',
+    base: '/fun',
+  },
   name: 'widget.js.fun',
   title: {
     'zh-CN': '有趣的桌面组件',
   },
-  version: '1.0.0',
   devOptions: {
     folder: './src/widgets/',
   },

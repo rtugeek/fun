@@ -1,17 +1,18 @@
-import { Widget, WidgetKeyword } from '@widget-js/core';
+import { DeployMode, Widget, WidgetKeyword } from '@widget-js/core'
 
 const WoodenFishWidget = new Widget({
-  name: 'widget.js.fun.wooden_fish',
+  name: '.wooden_fish',
   title: { 'zh-CN': '电子木鱼' },
   description: { 'zh-CN': '修电子福报' },
   keywords: [WidgetKeyword.RECOMMEND],
+  supportDeployMode: DeployMode.NORMAL | DeployMode.OVERLAP,
   lang: 'zh-CN',
   width: 2,
   height: 2,
-  categories:['fun'],
-  previewImage: '修改为组件预览图地址',
+  categories: ['fun'],
+  previewImage: '/images/preview_wooden_fish.png',
   path: '/widget/wooden_fish',
-  configPagePath: '/widget/config/wooden_fish',
-});
+  configPagePath: '/widget/config/wooden_fish?width=600&height=400&frame=true&transparent=false',
+})
 
-export default WoodenFishWidget;
+export default WoodenFishWidget
