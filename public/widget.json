@@ -52,6 +52,39 @@
       "supportDeployMode": 17,
       "configPagePath": "/widget/config/wooden_fish?width=600&height=400&frame=true&transparent=false",
       "routes": []
+    },
+    {
+      "name": "widget.js.fun.hitler",
+      "title": {
+        "zh-CN": "希特勒仪表盘"
+      },
+      "description": {
+        "zh-CN": ""
+      },
+      "keywords": [
+        "recommend"
+      ],
+      "security": false,
+      "permissions": [],
+      "lang": "zh-CN",
+      "width": 4,
+      "height": 4,
+      "maxWidth": 4,
+      "webviewTag": false,
+      "maxHeight": 4,
+      "minWidth": 2,
+      "minHeight": 2,
+      "movable": true,
+      "singleton": false,
+      "resizable": true,
+      "path": "/widget/hitler",
+      "meta": {},
+      "backgroundThrottling": true,
+      "previewImage": "修改为组件预览图地址",
+      "categories": [],
+      "supportDeployMode": 17,
+      "configPagePath": "/widget/config/hitler?width=600&height=500&frame=true&transparent=false",
+      "routes": []
     }
   ],
   "pages": []
