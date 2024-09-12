@@ -1,6 +1,6 @@
 {
   "name": "widget.js.fun",
-  "version": "0.2.0",
+  "version": "1.1.0",
   "author": "Neo Fu",
   "homepage": "widgetjs.cn",
   "title": {
@@ -19,7 +19,7 @@
   "url": "",
   "widgets": [
     {
-      "name": "widget.js.fun.wooden_fish",
+      "name": ".wooden_fish",
       "title": {
         "zh-CN": "电子木鱼"
       },
@@ -56,10 +56,10 @@
     {
       "name": "widget.js.fun.hitler",
       "title": {
-        "zh-CN": "希特勒仪表盘"
+        "zh-CN": "仪表盘"
       },
       "description": {
-        "zh-CN": ""
+        "zh-CN": "Sieg heil!"
       },
       "keywords": [
         "recommend"
@@ -67,8 +67,8 @@
       "security": false,
       "permissions": [],
       "lang": "zh-CN",
-      "width": 4,
-      "height": 4,
+      "width": 2,
+      "height": 2,
       "maxWidth": 4,
       "webviewTag": false,
       "maxHeight": 4,
@@ -80,9 +80,13 @@
       "path": "/widget/hitler",
       "meta": {},
       "backgroundThrottling": true,
-      "previewImage": "修改为组件预览图地址",
-      "categories": [],
+      "previewImage": "/images/preview_hitler.png",
+      "categories": [
+        "fun",
+        "utilities"
+      ],
       "supportDeployMode": 17,
+      "requiredAppVersion": "24.9.0",
       "configPagePath": "/widget/config/hitler?width=600&height=500&frame=true&transparent=false",
       "routes": []
     }
