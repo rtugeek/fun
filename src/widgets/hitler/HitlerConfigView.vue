@@ -20,7 +20,6 @@ const widgetConfigOption = new WidgetConfigOption({
 const selectedMonitorType = useStorage<MonitorType>('MonitorType', 'memory')
 const hasGraphic = ref(false)
 SystemApi.getHardware('Gpu').then((gpuList) => {
-  console.log(gpuList)
   if (gpuList.length > 0) {
     hasGraphic.value = true
   }
@@ -32,13 +31,15 @@ SystemApi.getHardware('Gpu').then((gpuList) => {
     :widget-params="widgetParams"
     :option="widgetConfigOption"
   >
-    <el-form-item label="监控类型" prop="backgroundColor">
-      <el-select v-model="selectedMonitorType">
-        <el-option label="CPU" value="cpu"></el-option>
-        <el-option label="内存" value="memory"></el-option>
-        <el-option v-if="hasGraphic" label="GPU" value="gpu"></el-option>
-      </el-select>
-    </el-form-item>
+    <template #custom>
+      <el-form-item label="监控类型" prop="backgroundColor">
+        <el-select v-model="selectedMonitorType">
+          <el-option label="CPU" value="cpu"></el-option>
+          <el-option label="内存" value="memory"></el-option>
+          <el-option v-if="hasGraphic" label="GPU" value="gpu"></el-option>
+        </el-select>
+      </el-form-item>
+    </template>
   </widget-edit-dialog>
 </template>
 
