@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useWidget } from '@widget-js/vue3'
+import { useAppVersion, useWidget } from '@widget-js/vue3'
 import { ref } from 'vue'
 import { useCssVar, useStorage, useTimeoutPoll } from '@vueuse/core'
 import { MonitorUtils } from '@/utils/MonitorUtils'
@@ -16,22 +16,28 @@ const setPercent = (percentValue: number) => {
   rotate.value = `${-80 + percentValue * 80}deg`
 }
 
+const appVersion = useAppVersion()
+const targetVersion = '24.10.6'
+const needUpgrade = ref(false)
+appVersion.isLessThan(targetVersion).then((result) => {
+  needUpgrade.value = result
+})
 async function update() {
   try {
     if (selectedMonitorType.value == 'memory') {
       const memoryLoad = await SystemApi.getHardwareSensor('Memory', 'Load')
-      const load = memoryLoad.find(it => it.text == 'Memory')
-      const percent = parseFloat(load.value.replaceAll('%', '')) / 100
+      const load = memoryLoad.find(it => it.sensorType == 'Load')
+      const percent = load.value / 100
       setPercent(percent)
     } else if (selectedMonitorType.value == 'cpu') {
       const cpuLoad = await SystemApi.getHardwareSensor('Cpu', 'Load')
       const totalLoad = cpuLoad.find(it => it.text == 'CPU Total')
-      const percent = parseFloat(totalLoad.value.replaceAll('%', '')) / 100
+      const percent = totalLoad.value / 100
       setPercent(percent)
     } else if (selectedMonitorType.value == 'gpu') {
       const gpuLoad = await SystemApi.getHardwareSensor('Gpu', 'Load')
-      const coreLoad = gpuLoad.find(it => 'GPU Core')
-      const percent = parseFloat(coreLoad.value.replaceAll('%', '')) / 100
+      const coreLoad = gpuLoad.find(it => it.sensorType == 'Load')
+      const percent = coreLoad.value / 100
       setPercent(percent)
     }
   } catch (e) {
@@ -40,6 +46,7 @@ async function update() {
 }
 
 useTimeoutPoll(update, 3000, {immediate: true})
+update()
 </script>
 
 <template>
@@ -49,7 +56,12 @@ useTimeoutPoll(update, 3000, {immediate: true})
       <img ref="handRef" class="hand" src="@/assets/hitler_hand.png">
       <img src="@/assets/hitler_body.png">
       <div class="value">
-        {{ MonitorUtils.getShortTitle(selectedMonitorType) }} {{ percent }}
+        <template v-if="needUpgrade">
+          <div style="font-size: 12px">请升应用版本至 {{ targetVersion }}</div>
+        </template>
+        <template v-else>
+          {{ MonitorUtils.getShortTitle(selectedMonitorType) }} {{ percent }}
+        </template>
       </div>
     </div>
   </widget-wrapper>

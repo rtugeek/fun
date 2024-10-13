@@ -19,7 +19,7 @@
   "url": "",
   "widgets": [
     {
-      "name": ".wooden_fish",
+      "name": "widget.js.fun.wooden_fish",
       "title": {
         "zh-CN": "电子木鱼"
       },
