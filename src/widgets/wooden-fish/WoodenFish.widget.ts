@@ -2,8 +2,8 @@ import { DeployMode, Widget, WidgetKeyword } from '@widget-js/core'
 
 const WoodenFishWidget = new Widget({
   name: '.wooden_fish',
-  title: { 'zh-CN': '电子木鱼' },
-  description: { 'zh-CN': '修电子福报' },
+  title: { 'zh-CN': '电子木鱼', 'en-US': 'Wooden Fish' },
+  description: { 'zh-CN': '修电子福报', 'en-US': 'Cultivate digital karma' },
   keywords: [WidgetKeyword.RECOMMEND],
   supportDeployMode: DeployMode.NORMAL | DeployMode.OVERLAP,
   lang: 'zh-CN',

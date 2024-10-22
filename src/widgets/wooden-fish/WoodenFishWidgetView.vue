@@ -15,6 +15,7 @@ const keyframes = [
 ]
 
 const animationDuration = 1000
+const count = ref(0)
 const animationOptions = {
   duration: animationDuration,
   iterations: 1,
@@ -28,7 +29,7 @@ function hit() {
   const rootElement = document.querySelector('.root')
   rootElement?.appendChild(merits)
   merits.animate(keyframes, animationOptions)
-
+  count.value++
   setTimeout(() => {
     rootElement?.removeChild(merits)
   }, animationDuration)
@@ -57,6 +58,7 @@ onMounted(async () => {
     <div class="root">
       <Music class="bgm" :class="{ active: playBgm }" @click="onBgmClick" />
       <img src="@/assets/images/wooden_fish.png" class="fish" @click="hit">
+      <div class="count">功德数：{{count}}</div>
     </div>
     <audio ref="hitRef" src="./audio/hit.mp3" />
     <audio ref="bgmRef" src="./audio/bgm.mp3" />
@@ -69,12 +71,13 @@ onMounted(async () => {
   -webkit-user-drag: none;
 }
 .root{
-  background-color: var(--widget-background-color);
-  border-radius: var(--widget-border-radius);
+  height: 100%;
   color: var(--widget-color);
   display: flex;
+  flex-direction: column;
   position: relative;
   align-items: center;
+  margin-top: -10px;
   justify-content: center;
   .merits {
     position: absolute;
@@ -84,9 +87,9 @@ onMounted(async () => {
     font-size: 1.2rem;
   }
   .bgm{
-    position: absolute;
-    top: 8px;
-    left: 8px;
+    position: fixed;
+    top: 24px;
+    left: 24px;
     font-size: 1.2rem;
     opacity: 0.2;
     z-index: 99;
@@ -107,5 +110,11 @@ onMounted(async () => {
       scale: 0.9;
     }
   }
+  .count{
+    position: absolute;
+    cursor: pointer;
+    bottom: 4px;
+  }
 }
+
 </style>

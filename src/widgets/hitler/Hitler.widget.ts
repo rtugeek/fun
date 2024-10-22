@@ -2,8 +2,8 @@ import { Widget, WidgetKeyword } from '@widget-js/core'
 
 const HitlerWidget = new Widget({
   name: 'widget.js.fun.hitler',
-  title: { 'zh-CN': '仪表盘' },
-  description: { 'zh-CN': 'Sieg heil!' },
+  title: { 'zh-CN': '仪表盘', 'en-US': 'Dashboard' },
+  description: { 'zh-CN': 'Sieg heil!', 'en-US': 'Sieg heil!' },
   keywords: [WidgetKeyword.RECOMMEND],
   categories: ['fun','utilities'],
   lang: 'zh-CN',
